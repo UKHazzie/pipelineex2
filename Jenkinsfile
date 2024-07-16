@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'echo "Start Building..."'
-                sh './building.sh'
+                sh 'building.sh'
                 sh 'echo "End of Building..."'
             }
         }
