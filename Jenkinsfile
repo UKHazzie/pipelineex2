@@ -3,26 +3,23 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "Building..."'
-                sh 'ls -al'
+                sh 'echo "Start Building..."'
+                sh './building.sh'
                 sh 'echo "End of Building..."'
             }
         }
         stage('Test') {
             steps {
-                sh 'echo "Testing..."'
-                sh 'pwd'
-                sh 'touch testfile.txt'
-                sh 'ls -l'
+                sh 'echo "Start Testing..."'
+                sh './testing.sh'
                 sh 'echo "End of Testing..."'
             }
         }
         stage('Deploy') {
             steps {
                 sh 'cat ./deploy.sh'
-                sh 'echo "Deploying..."'
-                sh 'mv testfile.txt /tmp'
-                sh 'ls -l /tmp'
+                sh 'echo "Start Deploying..."'
+                sh './deploying.sh'
                 sh 'echo "End of Deploy..."'
             }
         }
