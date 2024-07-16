@@ -5,6 +5,7 @@ pipeline {
             steps {
                 sh 'echo "Building..."'
                 sh 'ls -al'
+                sh 'echo "End of Building..."'
             }
         }
         stage('Test') {
@@ -13,6 +14,7 @@ pipeline {
                 sh 'pwd'
                 sh 'touch testfile.txt'
                 sh 'ls -l'
+                sh 'echo "End of Testing..."'
             }
         }
         stage('Deploy') {
@@ -21,6 +23,7 @@ pipeline {
                 sh 'echo "Deploying..."'
                 sh 'mv testfile.txt /tmp'
                 sh 'ls -l /tmp'
+                sh 'echo "End of Deploy..."'
             }
         }
     }
